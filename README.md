@@ -1,6 +1,6 @@
 # Gestionnaire de base de donnée
 
-## Utilisation
+## Contexte
 - Cette base de donnée est déstinée à être utilisée sur un site de gestionnaire de CV en interne par une quelconque entreprise. Elle permet de gérer les droits de chaque utilisateur et les différentes personnes qui postulent aux offres de l'entreprise.
 ## Création de la BDD
 - Le fichier MCD.png est une image du MCD et permet de visualiser l'architecture de la base de données.
