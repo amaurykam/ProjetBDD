@@ -41,7 +41,7 @@ CREATE TABLE SECTEUR (
   nom_secteur VARCHAR(42)
 );
 
-CREATE TABLE UTILISATEURS (
+CREATE TABLE UTILISATEUR (
   PRIMARY KEY (id_user),
   id_user      INT AUTO_INCREMENT NOT NULL,
   username     VARCHAR(42),
@@ -57,7 +57,7 @@ ALTER TABLE POSTULANT ADD FOREIGN KEY (id_cv) REFERENCES CV (id_cv);
 ALTER TABLE POSTULER ADD FOREIGN KEY (id_offre) REFERENCES OFFRE (id_offre);
 ALTER TABLE POSTULER ADD FOREIGN KEY (id_postulant) REFERENCES POSTULANT (id_postulant);
 
-ALTER TABLE UTILISATEURS ADD FOREIGN KEY (id_mot_passe) REFERENCES AUTHENTIFICATION (id_mot_passe);
+ALTER TABLE UTILISATEUR ADD FOREIGN KEY (id_mot_passe) REFERENCES AUTHENTIFICATION (id_mot_passe);
 
 INSERT INTO `cv`(`id_cv`, `pdf`) VALUES ('1','C:\\Users\vince\\OneDrive\\Documents\\important\\CV_Amaury');
 INSERT INTO `cv`(`id_cv`, `pdf`) VALUES ('2','C:\\Users\\vince\\OneDrive\\Documents\\important\\CV_Vincent');
@@ -67,7 +67,7 @@ INSERT INTO `postulant`(`id_postulant`, `nom`, `prenom`, `telephone`, `email`, `
 INSERT INTO `postulant`(`id_postulant`, `nom`, `prenom`, `telephone`, `email`, `id_cv`) VALUES ('1','Kamerer','Amaury','0782452705','amaury.kamerer@esme.fr','1');
 INSERT INTO `postulant`(`id_postulant`, `nom`, `prenom`, `telephone`, `email`, `id_cv`) VALUES ('3','Foullous','Abderrahman','0762729630','abderrahman.foullous@esme.fr','3');
 
-INSERT INTO `offres` (`id_offre`, `nom_offre`, `id_secteur`) VALUES
+INSERT INTO `offre` (`id_offre`, `nom_offre`, `id_secteur`) VALUES
 (1, 'apprenti_dev', 2),
 (2, 'apprenti_SOC', 1),
 (3, 'pentest', 1),
@@ -75,12 +75,12 @@ INSERT INTO `offres` (`id_offre`, `nom_offre`, `id_secteur`) VALUES
 (5, 'backend_dev', 3),
 (6, 'frontend_dev', 2);
 
-INSERT INTO `secteurs` (`id_secteur`, `nom_secteur`) VALUES
+INSERT INTO `secteur` (`id_secteur`, `nom_secteur`) VALUES
 (1, 'cybersécurité'),
 (2, 'centre_de_contact'),
 (3, 'lab_recherche');
 
-INSERT INTO `utilisateurs` (`id_user`, `username`, `droits`, `id_mot_passe`) VALUES
+INSERT INTO `utilisateur` (`id_user`, `username`, `droits`, `id_mot_passe`) VALUES
 (1, 'kamaury', 'admin', 1),
 (2, 'avincent', 'normal', 2),
 (3, 'fabderrahman', 'admin', 3);
