@@ -20,7 +20,7 @@ FROM offre
 GROUP BY id_secteur
 HAVING COUNT(*) > 2;
 
-SELECT nom FROM offre
+SELECT nom_offre FROM offre
 UNION
 SELECT nom_secteur FROM secteur;
 
@@ -38,15 +38,7 @@ WHERE id_secteur IN (1, 2);
 SELECT * FROM utilisateur
 WHERE id_user BETWEEN 1 AND 3;
 
-SELECT nom, 
-  CASE 
-    WHEN id_secteur = 1 THEN 'Cybersécurité'
-    WHEN id_secteur = 2 THEN 'Centre de contact'
-    ELSE 'Autre' 
-  END AS secteur
-FROM offre;
-
-SELECT nom, 
+SELECT nom_offre, 
   CASE 
     WHEN id_secteur = 1 THEN 'Cybersécurité'
     WHEN id_secteur = 2 THEN 'Centre de contact'
@@ -56,20 +48,21 @@ FROM offre;
 
 EXPLAIN SELECT * FROM utilisateur WHERE id_user = 1;
 
-BEGIN TRANSACTION;
+#BEGIN TRANSACTION;
 
-UPDATE utilisateur
-SET droits = 'super_admin'
-WHERE username = 'kamaury';
+#UPDATE utilisateur
+#SET droits = 'super_admin'
+#WHERE username = 'kamaury';
 
-COMMIT;
+#COMMIT;
 
 DELETE FROM utilisateur
 WHERE id_user = 3;
 
-ALTER TABLE offres
+ALTER TABLE offre
 DROP nom_offre;
-ALTER TABLE offres ADD nom_poste VARCHAR(42);
+
+ALTER TABLE offre ADD nom_poste VARCHAR(42);
 
 DROP TABLE cv;
 
