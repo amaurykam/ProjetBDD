@@ -15,9 +15,6 @@ UPDATE utilisateur
 SET droits = 'super_admin'
 WHERE username = 'kamaury';
 
-DELETE FROM utilisateur
-WHERE id_user = 3;
-
 SELECT id_secteur, COUNT(*) AS total_offres
 FROM offre
 GROUP BY id_secteur
@@ -26,12 +23,6 @@ HAVING COUNT(*) > 2;
 SELECT nom FROM offre
 UNION
 SELECT nom_secteur FROM secteur;
-
-ALTER TABLE offres
-DROP nom_offre;
-ALTER TABLE offres ADD nom_poste VARCHAR(42);
-
-DROP TABLE cv;
 
 SELECT * FROM postulant
 LIMIT 5;
@@ -63,8 +54,6 @@ SELECT nom,
   END AS secteur
 FROM offre;
 
-TRUNCATE TABLE authentification;
-
 EXPLAIN SELECT * FROM utilisateur WHERE id_user = 1;
 
 BEGIN TRANSACTION;
@@ -75,4 +64,13 @@ WHERE username = 'kamaury';
 
 COMMIT;
 
+DELETE FROM utilisateur
+WHERE id_user = 3;
 
+ALTER TABLE offres
+DROP nom_offre;
+ALTER TABLE offres ADD nom_poste VARCHAR(42);
+
+DROP TABLE cv;
+
+TRUNCATE TABLE authentification;
