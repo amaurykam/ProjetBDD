@@ -15,7 +15,7 @@ CREATE TABLE OFFRE (
   PRIMARY KEY (id_offre),
   id_offre   INT AUTO_INCREMENT NOT NULL,
   nom_offre  VARCHAR(42),
-  id_secteur ID NOT NULL
+  id_secteur INT NOT NULL
 );
 
 CREATE TABLE POSTULANT (
@@ -25,14 +25,14 @@ CREATE TABLE POSTULANT (
   prenom       VARCHAR(42),
   telephone    VARCHAR(42),
   email        VARCHAR(42),
-  id_cv        ID NOT NULL,
+  id_cv        INT NOT NULL,
   UNIQUE (id_cv)
 );
 
 CREATE TABLE POSTULER (
   PRIMARY KEY (id_postulant, id_offre),
   id_postulant INT AUTO_INCREMENT NOT NULL,
-  id_offre     ID NOT NULL
+  id_offre     INT NOT NULL
 );
 
 CREATE TABLE SECTEUR (
@@ -46,7 +46,7 @@ CREATE TABLE UTILISATEURS (
   id_user      INT AUTO_INCREMENT NOT NULL,
   username     VARCHAR(42),
   droits       VARCHAR(42),
-  id_mot_passe ID NOT NULL,
+  id_mot_passe INT NOT NULL,
   UNIQUE (id_mot_passe)
 );
 
