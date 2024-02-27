@@ -48,13 +48,13 @@ FROM offre;
 
 EXPLAIN SELECT * FROM utilisateur WHERE id_user = 1;
 
-#BEGIN TRANSACTION;
+BEGIN TRANSACTION;
 
-#UPDATE utilisateur
-#SET droits = 'super_admin'
-#WHERE username = 'kamaury';
+UPDATE utilisateur
+SET droits = 'super_admin'
+WHERE username = 'kamaury';
 
-#COMMIT;
+COMMIT;
 
 DELETE FROM utilisateur
 WHERE id_user = 3;
