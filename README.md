@@ -1,2 +1,2 @@
 # ProjetBDD
-RepoGitHub pour le projet BDD
+Repository GitHub pour le projet BDD
