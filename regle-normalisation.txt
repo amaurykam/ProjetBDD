@@ -1,0 +1,34 @@
+AUTHENTIFICATION:
+La clé primaire est id_mot_passe.
+Il y a une dépendance fonctionnelle id_mot_passe -> mot_passe, ce qui est bien.
+
+CV:
+La clé primaire est id_cv.
+Il n'y a pas de dépendance fonctionnelle non triviale.
+
+OFFRE:
+La clé primaire est id_offre.
+Il y a une dépendance fonctionnelle id_offre -> {nom_offre, id_secteur}, ce qui est bien.
+
+POSTULANT:
+La clé primaire est id_postulant.
+Il n'y a pas de dépendance fonctionnelle 
+
+POSTULER:
+La clé primaire est composée de (id_postulant, id_offre).
+Ces deux attributs sont des clés étrangères référençant les tables POSTULANT et OFFRE.
+
+SECTEUR:
+La clé primaire est id_secteur.
+Il n'y a pas de dépendance fonctionnelle non triviale.
+
+UTILISATEURS:
+La clé primaire est id_user.
+Il y a une dépendance fonctionnelle id_user -> {username, droits, id_mot_passe}, ce qui est bien.
+Analyse de la normalisation :
+Toutes les tables semblent être en 3NF (Troisième forme normale) ou BCNF (Boyce-Codd Normal Form), car :
+
+Chaque table a une clé primaire unique.
+Il n'y a pas de dépendances transitives ou dépendances partielles dans les tables.
+Toutes les dépendances fonctionnelles sont des dépendances sur les clés.
+Les clés étrangères sont correctement établies, assurant l'intégrité référentielle entre les table
